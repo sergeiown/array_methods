@@ -1,14 +1,13 @@
 # Array methods
 
-## This project presents the implementation of some array methods:
+## This project presents custom implementation of some array methods:
 
-1.  **.every**
-    .every() is an array method that performs the specified function for each element of the array and returns true only if
+1.  **every()** is an array method that performs the specified function for each element of the array and returns true only if
     function returns true for all elements. If the function returns false for one or more elements, the every method will return
     false.
 
     The syntax of the .every() method is:
-
+    
     array.every(function(currentValue, index, arr), thisValue)
     currentValue - the current element of the array.
     index - index of the current element in the array.
@@ -26,9 +25,8 @@
 
     console.log(result); // true
     ```
-
-2.  **.filter**
-    .filter() is a JavaScript method that creates a new array containing only those elements of the original array that
+##
+2.  **filter()** is a JavaScript method that creates a new array containing only those elements of the original array that
     satisfy the condition specified in the filter function. The function passed to .filter() takes three arguments: the current
     element, the element index and the original array itself.
 
