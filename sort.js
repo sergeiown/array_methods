@@ -20,6 +20,28 @@ function customSort(array) {
 }
 
 const numbers = [1, 3, 2, 5, 4, 7, 6, 9, 8];
-const sortedNumbers1 = customSort(numbers);
+const sortedNumbers = customSort(numbers);
 
-console.log(sortedNumbers1);
+console.log(sortedNumbers);
+
+/* Другий варіант.
+Якщо вказано функцію compareFunction, то вона використовується для порівняння 
+елементів масиву, інакше елементи порівнюються як числа. Відсортований масив 
+повертається як результат. */
+
+Array.prototype.mySort = function (compareFunction) {
+    for (let i = 0; i < this.length - 1; i++) {
+        for (let j = 0; j < this.length - i - 1; j++) {
+            if (compareFunction ? !compareFunction(this[j], this[j + 1]) : this[j] > this[j + 1]) {
+                [this[j], this[j + 1]] = [this[j + 1], this[j]];
+            }
+        }
+    }
+    return this;
+};
+
+const secondNumbers = [3, 1, 5, 2, 4];
+
+const secondSortedNumbers = numbers.mySort((a, b) => a - b);
+
+console.log(secondSortedNumbers);
