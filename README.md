@@ -1,4 +1,4 @@
-# Array methods
+# Frequently used array methods
 
 ## This project presents custom implementation of some array methods:
 
@@ -7,7 +7,11 @@
     false.
 
     The syntax of the .every() method is:
-    `array.every(function(currentValue, index, arr), thisValue)`
+
+    ```
+    array.every(function(currentValue, index, arr), thisValue)
+    ```
+
     currentValue - the current element of the array.
     index - index of the current element in the array.
     arr - array, for which the method every is called.
@@ -72,7 +76,11 @@
     an array, but don't want to create a new array.
 
     The syntax of the .forEach() method is:
-    `array.forEach(function(currentValue, index, arr), thisValue)`
+
+    ```
+    array.forEach(function(currentValue, index, arr), thisValue)
+    ```
+
     currentValue is the current element of the array.
     index - index of the current element in the array.
     arr - array, for which the method forEach is called.
@@ -190,7 +198,10 @@
 
     The syntax of the .some() method is:
 
-    `array.some(function(currentValue, index, arr), thisValue)`
+    ```
+    array.some(function(currentValue, index, arr), thisValue)
+    ```
+
     currentValue - the current element of the array.
     index - index of the current element in the array.
     arr - the array for which the some method is called.
@@ -207,3 +218,82 @@
 
     console.log(result); // true
     ```
+
+##
+
+7. **sort()** is a method that sorts the elements of an array in place and returns
+   the sorted array. By default, sort works in lexicographic order, that is it sorts
+   elements as strings.
+
+    The syntax of .sort() is:
+
+    ```
+    array.sort([compareFunction])
+    ```
+
+    The compareFunction is a function that takes two arguments and returns a number that
+    determines how to sort the elements.
+
+    Examples:
+
+    ```
+    // default sort (lexicographic order)
+    const array = [10, 5, 40, 25, 1000];
+    array.sort();
+    console.log(array); // [10, 1000, 25, 40, 5]
+    ```
+
+    ```
+    // sorting with comparison function
+    const anotherArray = [10, 5, 40, 25, 1000];
+    anotherArray.sort(function (a, b) {
+        return a - b;
+    });
+    console.log(anotherArray); // [5, 10, 25, 40, 1000].
+    ```
+
+    Note that .sort() changes the original array, so if you want the original array intact,
+    you should create a copy before sorting.
+
+##
+
+8. **splice()** is a method that is used to modify an existing array. It can be used to delete,
+   insert, and replace array elements.
+
+    The syntax of .splice() is:
+
+    ```
+    array.splice(startIndex, deleteCount, elementsToInsert)
+    ```
+
+    startIndex - index from which to start removing/inserting/replacing elements.
+    deleteCount - the number of elements to remove.
+    elementsToInsert - the elements to insert into the array instead of the deleted elements.
+
+    Examples:
+
+    ```
+    // deleting elements
+    const array = [1, 2, 3, 4, 5];
+    array.splice(1, 2);
+
+    console.log(array); // [1, 4, 5]
+    ```
+
+    ```
+    // inserting elements
+    const anotherArray = [1, 2, 3, 4, 5];
+    anotherArray.splice(2, 0, 6, 7);
+
+    console.log(anotherArray); // [1, 2, 6, 7, 3, 4, 5]
+    ```
+
+    ```
+    // replacement of elements
+    const oneMoreArray = [1, 2, 3, 4, 5];
+    oneMoreArray.splice(2, 2, 6, 7);
+
+    console.log(oneMoreArray); // [1, 2, 6, 7, 5]
+    ```
+
+    .splice() returns an array of deleted elements, so you can also use it to save deleted elements.
