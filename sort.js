@@ -40,8 +40,8 @@ Array.prototype.mySort = function (compareFunction) {
     return this;
 };
 
-const secondNumbers = [3, 1, 5, 2, 4];
+const otherNumbers = [3, 1, 5, 2, 4];
 
-const secondSortedNumbers = numbers.mySort((a, b) => a - b);
+const otherSortedNumbers = numbers.mySort((a, b) => a - b);
 
-console.log(secondSortedNumbers);
+console.log(otherSortedNumbers);
