@@ -19,7 +19,7 @@ function customSort(array) {
     return array;
 }
 
-const numbers = [1, 3, 2, 5, 4, 7, 6, 9, 8];
+const numbers = [1, 3, 2, 5, 0, 4, 7, 6, 9, 8];
 const sortedNumbers = customSort(numbers);
 
 console.log(sortedNumbers);
@@ -32,16 +32,18 @@ console.log(sortedNumbers);
 Array.prototype.mySort = function (compareFunction) {
     for (let i = 0; i < this.length - 1; i++) {
         for (let j = 0; j < this.length - i - 1; j++) {
-            if (compareFunction ? !compareFunction(this[j], this[j + 1]) : this[j] > this[j + 1]) {
-                [this[j], this[j + 1]] = [this[j + 1], this[j]];
+            if (compareFunction ? compareFunction(this[j], this[j + 1]) > 0 : this[j] > this[j + 1]) {
+                let temp = this[j];
+                this[j] = this[j + 1];
+                this[j + 1] = temp;
             }
         }
     }
     return this;
 };
 
-const otherNumbers = [3, 1, 5, 2, 4];
+const otherNumbers = [3, 1, 5, 2, 11, 4, 0, 6, 8, 7];
 
-const otherSortedNumbers = numbers.mySort((a, b) => a - b);
+const otherSortedNumbers = otherNumbers.mySort((a, b) => a - b);
 
 console.log(otherSortedNumbers);
