@@ -1,6 +1,6 @@
 # Frequently used array methods
 
-## This project presents custom implementation of some array methods:
+## This project presents a custom implementation of some array methods that can be useful when learning JS:
 
 1.  **every()** is an array method that performs the specified function for each element of the array and returns true only if
     function returns true for all elements. If the function returns false for one or more elements, the every method will return
